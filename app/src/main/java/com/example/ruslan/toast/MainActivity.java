@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -15,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.toggle_layout);
+
+        setContentView(R.layout.radiobutton_layout);
+//        setContentView(R.layout.toggle_layout);
 //        setContentView(R.layout.checkbox_layout);
 //        setContentView(R.layout.activity_main);
     }
@@ -71,6 +74,22 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Свет включен!", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Свет выключен!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        TextView selection = (TextView) findViewById(R.id.selection);
+
+        switch (view.getId()) {
+            case R.id.java:
+                if (checked)
+                    selection.setText("Выбран Java");
+                break;
+            case R.id.javascript:
+                if (checked)
+                    selection.setText("Выбран JavaScript");
+                break;
         }
     }
 }
