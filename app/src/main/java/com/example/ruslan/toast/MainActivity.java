@@ -1,5 +1,6 @@
 package com.example.ruslan.toast;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -15,9 +16,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        Toast toast = Toast.makeText(this, "Zhumabek Ruslan", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.TOP, 0,160);
-        toast.show();
+//        Toast toast = Toast.makeText(this, "Zhumabek Ruslan", Toast.LENGTH_SHORT);
+//        toast.setGravity(Gravity.TOP, 0,160);
+//        toast.show();
+
+
+        Snackbar.make(view, "Zhumabek Ruslan", Snackbar.LENGTH_LONG).show();
 
     }
 }
